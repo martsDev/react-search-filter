@@ -9,6 +9,7 @@ import "./App.css";
 function App() {
 
   const [item, setItem] = useState("");
+  const [book, setBook] = useState([]);
 
   const keys = ["book", "author"];
 
@@ -18,15 +19,14 @@ function App() {
   //   );
   // };
 
-  const [book, setBook] = useState([]);
   
   useEffect(() => {
     const fetchBooks = async () => {
-      const res = await axios.get("http://localhost:3001")
+      const res = await axios.get(`http://localhost:3001?q=${item}`)
       setBook(res.data);
     };
-    fetchBooks()
-  }, []);
+    if(item.length === 0 || item.length > 2) fetchBooks();
+  }, [item]);
 
   return (
     <div>
