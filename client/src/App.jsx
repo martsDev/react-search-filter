@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Table from './Table';
+// import data from './data';
 import "./App.css";
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
       keys.some((key) => titles[key].toLowerCase().includes(item))
     );
   };
+
+  useEffect(() => {
+
+  }, []);
 
   return (
     <div>
@@ -40,7 +45,13 @@ function App() {
 
         {/* FILTRO INTERMEDIÁRIO */}
 
-       <Table data={[]} />
+       {/* <Table data={search(data)} /> */}
+
+       {/* FILTRO AVANÇADO COM API */}
+
+
+
+       <Table data={search(data)} />
 
       </div>
     </div>
