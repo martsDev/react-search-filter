@@ -1,13 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import Table from './Table';
 import data from './data';
 import "./App.css";
-import { useState } from 'react';
 
 function App() {
 
   const [item, setItem] = useState("");
 
+  const keys = ["book", "author"];
+
+  const search = (data) => {
+    return data.filter((titles) => 
+      keys.some((key) => titles[key].toLowerCase().includes(item))
+    );
+  };
 
   return (
     <div>
@@ -23,10 +31,18 @@ function App() {
         </div>
       </div>
       <div className='container-list'>
-        <ul className='list'>
+
+        {/* FILTRO BÁSICO */}
+
+        {/* <ul className='list'>
           {data.filter((title) => title.book.toLowerCase().includes(item)
           ).map((title) => <li>{title.book}</li>)}
-        </ul>
+        </ul> */}
+
+        {/* FILTRO INTERMEDIÁRIO */}
+
+       <Table data={search(data)} />
+
       </div>
     </div>
   );
