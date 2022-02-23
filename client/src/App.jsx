@@ -40,7 +40,7 @@ function App() {
 
         {/* FILTRO INTERMEDIÁRIO */}
 
-       <Table data={search()} />
+       <Table data={[]} />
 
       </div>
     </div>

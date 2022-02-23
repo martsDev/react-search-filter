@@ -1,4 +1,4 @@
-const data = [
+module.exports = data = [
     {
         book: "Lord Of The Rings",
         author: "J.R.R Tolkien" 
@@ -12,5 +12,3 @@ const data = [
         author: "Douglas Adams"
     },
 ]
-
-export default data;
