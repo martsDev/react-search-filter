@@ -18,12 +18,11 @@ function App() {
   //   );
   // };
 
-  const [book, setBook] = ([]);
-
+  const [book, setBook] = useState([]);
+  
   useEffect(() => {
     const fetchBooks = async () => {
-      const res = await axios.get("http://localhost:3001/")
-      console.log(res.data)
+      const res = await axios.get("http://localhost:3001")
       setBook(res.data);
     };
     fetchBooks()
@@ -57,9 +56,7 @@ function App() {
 
        {/* FILTRO AVANÇADO COM API */}
 
-
-
-       {/* <Table data={book} /> */}
+       <Table data={book} />
 
       </div>
     </div>
