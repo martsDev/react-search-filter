@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Table = ({ data }) => {
+const Table = ({ book }) => {
   return (
       <table>
           <tbody>
@@ -8,7 +8,7 @@ const Table = ({ data }) => {
                   <th>Title</th>
                   <th>Author</th>
               </tr>
-             {data.map((item) => 
+             {book.map((item) => 
                 <tr>
                     <td>{item.book}</td>
                     <td>{item.author}</td>

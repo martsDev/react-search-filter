@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
+import axios from "axios";
 import Table from './Table';
 // import data from './data';
 import "./App.css";
@@ -11,14 +12,21 @@ function App() {
 
   const keys = ["book", "author"];
 
-  const search = (data) => {
-    return data.filter((titles) => 
-      keys.some((key) => titles[key].toLowerCase().includes(item))
-    );
-  };
+  // const search = (data) => {
+  //   return data.filter((titles) => 
+  //     keys.some((key) => titles[key].toLowerCase().includes(item))
+  //   );
+  // };
+
+  const [book, setBook] = ([]);
 
   useEffect(() => {
-
+    const fetchBooks = async () => {
+      const res = await axios.get("http://localhost:3001/")
+      console.log(res.data)
+      setBook(res.data);
+    };
+    fetchBooks()
   }, []);
 
   return (
@@ -51,7 +59,7 @@ function App() {
 
 
 
-       <Table data={search(data)} />
+       {/* <Table data={book} /> */}
 
       </div>
     </div>
