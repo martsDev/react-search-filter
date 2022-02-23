@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import Table from './Table';
-import data from './data';
 import "./App.css";
 
 function App() {
@@ -41,7 +40,7 @@ function App() {
 
         {/* FILTRO INTERMEDIÁRIO */}
 
-       <Table data={search(data)} />
+       <Table data={search()} />
 
       </div>
     </div>
