@@ -1,7 +1,7 @@
-export default data = [
+const data = [
     {
         book: "Lord Of The Rings",
-        author: "J.R.R Tolkien"
+        author: "J.R.R Tolkien" 
     },
     {
         book: "Filoteia",
@@ -12,3 +12,5 @@ export default data = [
         author: "Douglas Adams"
     },
 ]
+
+export default data;
